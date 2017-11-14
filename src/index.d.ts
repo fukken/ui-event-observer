@@ -1,28 +1,25 @@
 export class UIEventObserver {
     constructor();
 
-    hasSubscriber(targetElement: any, domEventName: any): any;
+    hasSubscriber(target: any, domEventName: string): boolean;
 
-    subscribe(target: any, eventName: any, handler: any): any;
+    subscribe(target: any, eventName: string, handler: Function): Function;
 
-    subscribeOnce(target: any, eventName: any, handler: any): any;
+    subscribeOnce(target: any, eventName: string, handler: Function): Function;
 
-    unsubscribe(target: any, eventName: any, handler: any): void;
+    unsubscribe(target: any, eventName: string, handler: Function): void;
 
     unsubscribeAll(): void;
-
 }
-
 declare module default_ {
-  export function hasSubscriber(targetElement: any, domEventName: any): any;
+  export function hasSubscriber(target: any, domEventName: string): boolean;
 
-  export function subscribe(target: any, eventName: any, handler: any): any;
+  export function subscribe(target: any, eventName: string, handler: Function): Function;
 
-  export function subscribeOnce(target: any, eventName: any, handler: any): any;
+  export function subscribeOnce(target: any, eventName: string, handler: Function): Function;
 
-  export function unsubscribe(target: any, eventName: any, handler: any): void;
+  export function unsubscribe(target: any, eventName: string, handler: Function): void;
 
   export function unsubscribeAll(): void;
 }
-
 export default default_;
